@@ -164,7 +164,7 @@ class SeguridadSocial:
         self.InputPension.grid(column=1, row=7, padx=4, pady=4)
         
         #Riesgos laborales
-        self.RiesgoL=ttk.Label(self.labelframe1, text="Pension:")        
+        self.RiesgoL=ttk.Label(self.labelframe1, text="Riesgos Laborales:")        
         self.RiesgoL.grid(column=0, row=8, padx=4, pady=4)
         self.riesgoLM=tk.StringVar()
         self.InputRiesgoL=ttk.Entry(self.labelframe1, textvariable=self.riesgoLM)
@@ -172,7 +172,7 @@ class SeguridadSocial:
         
         
         #Caja de compensacion
-        self.CajaC=ttk.Label(self.labelframe1, text="Pension:")        
+        self.CajaC=ttk.Label(self.labelframe1, text="Caja de compensación:")        
         self.CajaC.grid(column=0, row=9, padx=4, pady=4)
         self.cajaCM=tk.StringVar()
         self.InputCajaC=ttk.Entry(self.labelframe1, textvariable=self.cajaCM)
@@ -252,7 +252,7 @@ class SeguridadSocial:
         else:
             if(self.id.get().isdigit()):
                 iden = (self.id.get(),)
-                self.numero.set(self.id.get())
+                self.numero = (self.id.get())
                 registro = self.seguridad.ConsultarR(iden)
                 if(len(registro) > 0):
                     self.identificacionM.set(registro[0][0])
@@ -287,7 +287,6 @@ class SeguridadSocial:
             else:
                 messagebox.showwarning("Dato no valido", "Ingrese un numero de identificacion valido")
                     
-    
     def Cerrar(self):
         self.ventana1.destroy()
         
