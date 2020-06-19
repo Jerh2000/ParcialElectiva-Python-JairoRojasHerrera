@@ -80,6 +80,9 @@ class SeguridadSocial:
         self.boton1=ttk.Button(self.labelframe1, text="Agregar", command=self.AgregarRegistro)#command=self.agregar)
         self.boton1.grid(column=1, row=7, padx=4, pady=4)
         
+        self.botonSalir = ttk.Button(self.labelframe1,text="Salir" ,command=self.Cerrar)
+        self.botonSalir.grid(column=1, row=8, padx=4, pady=4)
+        
         
     def Consultar(self):
         self.pagina2 = ttk.Frame(self.cuaderno1)
@@ -102,6 +105,9 @@ class SeguridadSocial:
         
         self.scrolledtext=st.ScrolledText(self.labelframe1, width=50, height=10)
         self.scrolledtext.grid(column=0,row=5, padx=10, pady=10)
+        
+        self.botonSalir = ttk.Button(self.labelframe1,text="Salir" ,command=self.Cerrar)
+        self.botonSalir.grid(column=1, row=6, padx=4, pady=4)
            
     
     def Modificar(self):
@@ -176,7 +182,8 @@ class SeguridadSocial:
         self.boton1=ttk.Button(self.labelframe1, text="Guardar Cambios", command=self.GuardarCambios)#command=self.agregar)
         self.boton1.grid(column=1, row=10, padx=4, pady=4)
 
-
+        self.botonSalir = ttk.Button(self.labelframe1,text="Salir" ,command=self.Cerrar)
+        self.botonSalir.grid(column=1, row=11, padx=4, pady=4)
 
 
 
@@ -280,9 +287,9 @@ class SeguridadSocial:
             else:
                 messagebox.showwarning("Dato no valido", "Ingrese un numero de identificacion valido")
                     
-        
-        
-        
+    
+    def Cerrar(self):
+        self.ventana1.destroy()
         
         
         
